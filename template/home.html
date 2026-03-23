@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Links UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+  <div class="w-full max-w-2xl bg-white rounded-2xl shadow p-6">
+
+    <h1 class="text-2xl sm:text-3xl font-semibold mb-6 text-center sm:text-left">All your links</h1>
+
+    <div class="flex-col">
+      {% for l in links %}
+        <a href="/details/{{l.id}}">
+            <div class="flex justify-between sm:flex-row sm:items-center p-4 rounded-xl mb-4 transition bg-gray-200 mt-5 items-center gap-3">
+              <div>
+          <p class="font-medium text-base sm:text-xl">@{{l.name}}</p>
+          <span class="text-gray-500 flex items-center gap-2 text-sm sm:text-base">
+            <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+            tg: @{{l.tg_akk}}
+          </span>
+              </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+      <a href="/add"><button class="w-full border py-2 rounded-[8px] text-xl">Add link</button></a>
+    </div>
+
+
+</body>
+</html>

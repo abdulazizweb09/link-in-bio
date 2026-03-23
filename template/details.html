@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 from-indigo-500 to-purple-600 min-h-screen flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-6 sm:p-8">
+    
+    <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
+      Ma'lumotlar
+    </h2>
+
+    <form method="post" enctype="multipart/form-data" class="space-y-5">
+      {% csrf_token %}
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          name
+        </label>
+        <input 
+        value="{{link.name}}"
+          type="text" 
+          name="name"
+          placeholder="Enter name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+
+     <div class="space-y-4">
+  
+  <label class="block text-sm font-medium text-gray-600">
+    Rasm yuklash
+  </label>
+
+  <input 
+    type="file" 
+    accept="image/*"
+    name="img"
+    value="{{link.img.url}}"
+    onchange="previewImage(event)"
+    class="w-full text-sm text-gray-500
+    file:mr-4 file:py-2 file:px-4
+    file:rounded-xl file:border-0
+    file:text-sm file:font-semibold
+    file:bg-indigo-50 file:text-indigo-700
+    hover:file:bg-indigo-100"
+  >
+  <img src="{{link.img.url}}" id="preview" class="w-full h-48 object-cover rounded-xl border">
+
+    </div>
+      
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          telegram akkaunt
+        </label>
+        <input 
+        name="tg"
+        value="{{link.tg}}"
+          type="text" 
+          placeholder="Enter telegram nik name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          tg akk
+        </label>
+        <input 
+        value="{{link.tg_akk}}"
+          name="tg_akk"
+          type="text" 
+          placeholder="Enter telegram channel name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          instagram
+        </label>
+        <input 
+        value="{{link.insta}}"
+        name="insta"
+          type="text" 
+          placeholder="Enter instagram nik name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          youtube
+        </label>
+        <input 
+        name="youtube"
+        value="{{link.youtube}}"
+          type="text" 
+          placeholder="Enter youtube nik name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          tik tok
+        </label>
+        <input 
+        value="{{link.tiktok}}"
+        name="tiktok"
+          type="text" 
+          placeholder="Enter tik tok nik name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          linkidin
+        </label>
+        <input 
+        value="{{link.link}}"
+        name="link"
+          type="text" 
+          placeholder="Enter linkidin nik name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-600 mb-1">
+          github
+        </label>
+        <input 
+        value="{{link.github}}"
+        name="github"
+          type="text" 
+          placeholder="Enter github nik name"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        >
+      </div>
+      <button 
+        type="submit"
+        class="w-full bg-indigo-600 text-white py-2.5 rounded-xl font-semibold hover:bg-indigo-700 active:scale-95 transition duration-200"
+      >
+        O`zgartirish
+      </button>
+      <a 
+      href="/delete/{{link.id}}/">
+        <button type="button"
+        class="w-full mt-5 bg-indigo-600 text-white py-2.5 rounded-xl font-semibold hover:bg-indigo-700 active:scale-95 transition duration-200"
+        >
+      delete
+        </button>
+      </a>
+
+    </form>
+
+  </div>
+
+</body>
+</html>

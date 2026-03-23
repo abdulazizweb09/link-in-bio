@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ link.name }}</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-black text-white flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-[420px] p-6 text-center rounded-3xl 
+              bg-white/5 
+              shadow-[0_0_30px_rgba(255,255,255,0.08),0_0_80px_rgba(0,0,0,0.9)]">
+
+    <div class="flex justify-center mb-4">
+      <div class="w-[120px] h-[120px] rounded-full border-2 border-white overflow-hidden
+                  shadow-[0_0_12px_#fff,0_0_25px_#fff,0_0_50px_rgba(255,255,255,0.6),0_0_80px_rgba(255,255,255,0.3)]
+                  hover:shadow-[0_0_20px_#fff,0_0_40px_#fff,0_0_70px_rgba(255,255,255,0.7),0_0_100px_rgba(255,255,255,0.4)]
+                  hover:scale-105 transition duration-300">
+        <img src="{{ link.img.url }}" 
+             class="w-full h-full object-cover">
+      </div>
+    </div>
+
+    <h1 class="text-[26px] tracking-[2px] mb-2 font-semibold">
+      {{ link.name }}
+    </h1>
+
+    <p class="text-sm text-gray-400 mb-6">
+      Bizni boshqa ijtimoiy tarmoqlarda ham kuzating!
+    </p>
+
+    <div class="flex flex-col gap-4">
+      {% if link.tg %}
+        <a href="{{ link.tg }}"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl
+           bg-blue-500/10 border border-white/10
+           shadow-[0_0_12px_#0066cc,0_0_24px_rgba(0,102,204,0.35)]
+           hover:shadow-[0_0_24px_#0066cc,0_0_48px_rgba(0,102,204,0.5)]
+           hover:scale-105 active:scale-95 transition duration-300">
+          <i class="fa-solid fa-bullhorn"></i>
+          Telegram Kanal
+        </a>
+      {% endif %}
+
+      {% if link.insta %}
+        <a href="{{ link.insta }}"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl
+           bg-pink-500/10 border border-white/10
+           shadow-[0_0_12px_#ff0080,0_0_24px_#ff7f50,0_0_36px_#ff0080]
+           hover:shadow-[0_0_24px_#ff0080,0_0_48px_#ff7f50,0_0_60px_#ff0080]
+           hover:scale-105 active:scale-95 transition duration-300">
+          <i class="fa-brands fa-instagram"></i>
+          Instagram
+        </a>
+      {% endif %}
+
+      {% if link.youtube %}
+        <a href="{{ link.youtube }}"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl
+           bg-red-500/10 border border-white/10
+           shadow-[0_0_12px_#ff0000,0_0_24px_rgba(255,0,0,0.35)]
+           hover:shadow-[0_0_24px_#ff0000,0_0_48px_rgba(255,0,0,0.5)]
+           hover:scale-105 active:scale-95 transition duration-300">
+          <i class="fa-brands fa-youtube"></i>
+          YouTube
+        </a>
+      {% endif %}
+
+      {% if link.tiktok %}
+        <a href="{{ link.tiktok }}"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl
+           bg-cyan-400/10 border border-white/10
+           shadow-[0_0_12px_#00ffff,0_0_24px_#ff00ff,0_0_36px_#00ffff]
+           hover:shadow-[0_0_24px_#00ffff,0_0_48px_#ff00ff,0_0_60px_#00ffff]
+           hover:scale-105 active:scale-95 transition duration-300">
+          <i class="fa-brands fa-tiktok"></i>
+          TikTok
+        </a>
+      {% endif %}
+
+      {% if link.github %}
+        <a href="{{ link.github }}"
+           class="flex items-center justify-center gap-2 py-3 rounded-xl
+           bg-gray-500/10 border border-white/10
+           shadow-[0_0_12px_#888,0_0_24px_#aaa,0_0_36px_#888]
+           hover:shadow-[0_0_24px_#888,0_0_48px_#aaa,0_0_60px_#888]
+           hover:scale-105 active:scale-95 transition duration-300">
+          <i class="fa-brands fa-github"></i>
+          GitHub
+        </a>
+      {% endif %}
+    </div>
+
+    <p class="mt-6 text-xs text-gray-500">
+      © 2025 {{ link.name }}
+    </p>
+
+  </div>
+
+</body>
+</html>
